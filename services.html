@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Services informatiques TechNau : dépannage, maintenance, installation réseau et formation informatique au Mans et dans un rayon de 30 km.">
+    <meta name="keywords" content="dépannage informatique Le Mans, maintenance PC Sarthe, installation réseau 72, réparation ordinateur Le Mans, optimisation système informatique">
+    <title>Nos services informatiques - TechNau Le Mans</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e88e5;
+            --secondary-color: #0d47a1;
+            --light-color: #f5f5f5;
+            --dark-color: #333;
+            --gray-color: #757575;
+            --green-color: #4caf50;
+            --orange-color: #ff9800;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .active {
+            color: var(--primary-color);
+        }
+        
+        .active::after {
+            width: 100%;
+        }
+        
+        .cta-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--dark-color);
+            transition: var(--transition);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 150px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--dark-color);
+        }
+        
+        /* Services Content */
+        .services-content {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+        }
+        
+        .service-box {
+            margin-bottom: 70px;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .service-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-right: 20px;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(30, 136, 229, 0.1);
+            border-radius: 50%;
+        }
+        
+        .service-title {
+            font-size: 1.8rem;
+            color: var(--dark-color);
+        }
+        
+        .service-description {
+            margin-bottom: 25px;
+        }
+        
+        .service-list {
+            list-style: none;
+        }
+        
+        .service-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .service-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        .service-note {
+            margin-top: 25px;
+            font-style: italic;
+            color: var(--gray-color);
+        }
+        
+        /* Why Choose Us Box */
+        .why-choose-box {
+            background-color: rgba(76, 175, 80, 0.1);
+            border-left: 5px solid var(--green-color);
+            padding: 30px;
+            border-radius: 5px;
+            margin: 50px 0;
+        }
+        
+        .why-choose-title {
+            color: var(--green-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .why-choose-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .why-choose-list li {
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .why-choose-list li:before {
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: var(--green-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+        
+        /* Call To Action */
+        .cta-section {
+            background-color: rgba(255, 152, 0, 0.1);
+            padding: 50px 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .cta-title {
+            font-size: 1.8rem;
+            color: var(--orange-color);
+            margin-bottom: 20px;
+        }
+        
+        .cta-text {
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-button-large {
+            background-color: var(--orange-color);
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            border: none;
+            display: inline-block;
+        }
+        
+        .cta-button-large:hover {
+            background-color: #e68a00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .footer-section p, .footer-section a {
+            margin-bottom: 10px;
+            display: block;
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-section a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .service-title {
+                font-size: 1.6rem;
+            }
+            
+            .why-choose-list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                background-color: #fff;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                padding: 20px 0;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .service-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .service-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .why-choose-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 15px;
+            }
+            
+            .page-header {
+                padding: 130px 0 40px;
+            }
+            
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .service-title {
+                font-size: 1.4rem;
+            }
+            
+            .service-box {
+                padding: 20px;
+            }
+            
+            .cta-section {
+                padding: 30px 20px;
+            }
+            
+            .cta-title {
+                font-size: 1.5rem;
+            }
+            
+            .cta-button-large {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Tech<span>Nau</span></a>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="contact.html" class="cta-button">Demander un devis</a>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nos services informatiques sur Le Mans et ses alentours</h1>
+            <p>Des solutions adaptées à vos besoins, chez vous ou dans vos locaux.</p>
+        </div>
+    </section>
+
+    <!-- Services Content -->
+    <section class="services-content">
+        <div class="container">
+            <!-- Service 1 -->
+            <div class="service-box">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h2 class="service-title">Dépannage & réparation informatique</h2>
+                </div>
+                <p class="service-description">Votre ordinateur est lent, ne démarre plus ou présente des dysfonctionnements ? TechNau intervient rapidement pour diagnostiquer et résoudre tous vos problèmes informatiques.</p>
+                <ul class="service-list">
+                    <li>Diagnostic rapide des pannes matérielles et logicielles</li>
+                    <li>Réparation de PC, ordinateurs portables, imprimantes et périphériques</li>
+                    <li>Réinstallation de Windows et optimisation du système d'exploitation</li>
+                    <li>Suppression de virus, malwares et logiciels espions</li>
+                    <li>Récupération de données personnelles après panne ou suppression accidentelle</li>
+                </ul>
+                <p class="service-note">Intervention à domicile dans un rayon de 30 km autour du Mans</p>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-box">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h2 class="service-title">Installation réseau et matériel</h2>
+                </div>
+                <p class="service-description">Bénéficiez d'une installation professionnelle de votre matériel informatique et de votre réseau pour une utilisation optimale au quotidien.</p>
+                <ul class="service-list">
+                    <li>Configuration de box Internet, routeurs et répéteurs Wi-Fi</li>
+                    <li>Mise en place de câblage RJ45 pour un réseau filaire performant</li>
+                    <li>Installation et configuration d'imprimantes, scanners, NAS et autres périphériques</li>
+                    <li>Optimisation de la connexion pour le télétravail ou le gaming</li>
+                    <li>Mise en place de solutions pour partager fichiers et imprimantes entre plusieurs appareils</li>
+                </ul>
+                <p class="service-note">Configuration sur mesure adaptée à vos besoins spécifiques</p>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-box">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h2 class="service-title">Maintenance et optimisation</h2>
+                </div>
+                <p class="service-description">Prévenez les problèmes et gardez votre équipement informatique performant grâce à une maintenance régulière et des optimisations ciblées.</p>
+                <ul class="service-list">
+                    <li>Nettoyage logiciel complet et suppression de programmes inutiles</li>
+                    <li>Mise à jour du système d'exploitation et des pilotes</li>
+                    <li>Recommandations personnalisées pour prolonger la durée de vie de votre matériel</li>
+                    <li>Installation de logiciels utiles et renforcement de la sécurité</li>
+                    <li>Vérification et optimisation des performances globales</li>
+                </ul>
+                <p class="service-note">Des forfaits de maintenance régulière sont disponibles pour particuliers et professionnels</p>
+            </div>
+
+            <!-- Why Choose Us Box -->
+            <div class="why-choose-box">
+                <h3 class="why-choose-title">Pourquoi choisir TechNau ?</h3>
+                <ul class="why-choose-list">
+                    <li>Technicien indépendant, à l'écoute de vos besoins</li>
+                    <li>Conseils adaptés à votre niveau informatique</li>
+                    <li>Intervention rapide et sur mesure</li>
+                    <li>Pas de jargon technique, que des solutions claires</li>
+                </ul>
+            </div>
+
+            <!-- Call To Action -->
+            <div class="cta-section">
+                <h2 class="cta-title">Vous avez un besoin spécifique ?</h2>
+                <p class="cta-text">Chaque situation est unique. Contactez-moi dès maintenant pour un devis gratuit et personnalisé, adapté précisément à vos besoins informatiques.</p>
+                <a href="contact.html" class="cta-button-large">Demander un devis gratuit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>TechNau</h3>
+                    <p>Votre expert informatique de proximité au Mans. Services personnalisés pour particuliers et professionnels.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 06 XX XX XX XX</p>
+                    <p><i class="fas fa-envelope"></i> contact@technau.fr</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Le Mans, Sarthe (72)</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Liens rapides</h3>
+                    <a href="index.html">Accueil</a>
+                    <a href="services.html">Services</a>
+                    <a href="about.html">À propos</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="legal.html">Mentions légales</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TechNau - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav');
+            
+            hamburger.addEventListener('click', function() {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    nav.classList.remove('active');
+                });
+            });
+            
+            // Add fixed header on scroll
+            window.addEventListener('scroll', function() {
+                const header = document.querySelector('header');
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            });
+        });
+
+        // Script d'effet de particules statiques avec réaction plus rapide au passage de la souris
+(function() {
+  // Créer le canvas
+  const canvas = document.createElement('canvas');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  canvas.style.position = 'fixed';
+  canvas.style.top = '0';
+  canvas.style.left = '0';
+  canvas.style.width = '100%';
+  canvas.style.height = '100%';
+  canvas.style.pointerEvents = 'none';
+  canvas.style.zIndex = '1';
+  document.body.insertBefore(canvas, document.body.firstChild);
+
+  // Configuration
+  const particleCount = 100;
+  const particleRadius = 1.5;
+  const connectionDistance = 150;
+  const mouseInfluenceDistance = 180; // Augmenté pour une zone d'influence plus large
+  const mouseInfluenceStrength = 0.25; // Augmenté pour une réaction plus forte
+  
+  // Contexte et variables
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  let originalPositions = [];
+  let mousePosition = { x: null, y: null };
+  
+  // Créer les particules
+  function createParticles() {
+    particles = [];
+    originalPositions = [];
+    for (let i = 0; i < particleCount; i++) {
+      const x = Math.random() * canvas.width;
+      const y = Math.random() * canvas.height;
+      particles.push({
+        x: x,
+        y: y,
+        vx: 0,
+        vy: 0
+      });
+      // Conserver la position originale pour revenir à l'état statique
+      originalPositions.push({ x: x, y: y });
+    }
+  }
+  
+  // Redimensionner le canvas
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    createParticles();
+  }
+  
+  // Animer
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Mettre à jour et dessiner les particules
+    for (let i = 0; i < particles.length; i++) {
+      // Appliquer la vélocité
+      particles[i].x += particles[i].vx;
+      particles[i].y += particles[i].vy;
+      
+      // Influence de la souris
+      if (mousePosition.x !== null && mousePosition.y !== null) {
+        const dx = mousePosition.x - particles[i].x;
+        const dy = mousePosition.y - particles[i].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < mouseInfluenceDistance) {
+          const force = (mouseInfluenceDistance - distance) / mouseInfluenceDistance;
+          particles[i].vx += dx * force * mouseInfluenceStrength / distance || 0;
+          particles[i].vy += dy * force * mouseInfluenceStrength / distance || 0;
+        } else {
+          // Retour à la position d'origine plus rapide
+          particles[i].vx = (originalPositions[i].x - particles[i].x) * 0.1; // Augmenté de 0.05 à 0.1
+          particles[i].vy = (originalPositions[i].y - particles[i].y) * 0.1; // Augmenté de 0.05 à 0.1
+        }
+      } else {
+        // Retour à la position d'origine plus rapide
+        particles[i].vx = (originalPositions[i].x - particles[i].x) * 0.1; // Augmenté de 0.05 à 0.1
+        particles[i].vy = (originalPositions[i].y - particles[i].y) * 0.1; // Augmenté de 0.05 à 0.1
+      }
+      
+      // Limiter la vitesse mais avec une vitesse maximale plus élevée
+      const maxSpeed = 3; // Augmenté de 2 à 3
+      const speed = Math.sqrt(particles[i].vx * particles[i].vx + particles[i].vy * particles[i].vy);
+      if (speed > maxSpeed) {
+        particles[i].vx = (particles[i].vx / speed) * maxSpeed;
+        particles[i].vy = (particles[i].vy / speed) * maxSpeed;
+      }
+      
+      // Réduire la vitesse (friction) moins agressive
+      particles[i].vx *= 0.98; // Changé de 0.95 à 0.98 pour moins de friction
+      particles[i].vy *= 0.98; // Changé de 0.95 à 0.98 pour moins de friction
+      
+      // Dessiner la particule
+      ctx.beginPath();
+      ctx.arc(particles[i].x, particles[i].y, particleRadius, 0, Math.PI * 2);
+      ctx.fillStyle = '#1e88e5';
+      ctx.fill();
+    }
+    
+    // Dessiner les connexions
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distance < connectionDistance) {
+          // Opacité basée sur la distance
+          const opacity = 1 - distance / connectionDistance;
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = `rgba(30, 136, 229, ${opacity * 0.2})`;
+          ctx.stroke();
+        }
+      }
+    }
+    
+    requestAnimationFrame(animate);
+  }
+  
+  // Gérer les événements de la souris
+  function handleMouseMove(e) {
+    // Vérifier si la souris est sur la carte Google Maps
+    const isOverMap = isMouseOverMap(e);
+    if (isOverMap) {
+      // Si la souris est sur la carte, on ne tient pas compte de sa position
+      mousePosition.x = null;
+      mousePosition.y = null;
+    } else {
+      mousePosition.x = e.clientX;
+      mousePosition.y = e.clientY;
+    }
+  }
+  
+  function isMouseOverMap(e) {
+    // Obtenir tous les éléments sous le curseur
+    const elementsUnderCursor = document.elementsFromPoint(e.clientX, e.clientY);
+    
+    // Vérifier si l'un des éléments est la carte Google Maps
+    for (const element of elementsUnderCursor) {
+      if (element.classList.contains('google-map') || 
+          element.tagName.toLowerCase() === 'iframe' ||
+          element.closest('.google-map')) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  function handleMouseLeave() {
+    mousePosition.x = null;
+    mousePosition.y = null;
+  }
+  
+  // Initialisation des événements
+  window.addEventListener('resize', resizeCanvas);
+  document.addEventListener('mousemove', handleMouseMove);
+  document.addEventListener('mouseleave', handleMouseLeave);
+  
+  // Démarrer
+  resizeCanvas();
+  animate();
+})();
+    </script>
+</body>
+</html>
