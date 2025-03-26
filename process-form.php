@@ -1,7 +1,7 @@
 
 <?php
 // Configuration
-$recipient_email = "smeet.felix@gmail.com"; // Votre adresse Gmail
+$recipient_email = "contact@technau.fr"; // Votre adresse Gmail
 $website_name = "TechNau";
 
 // Vérification de la méthode de requête
