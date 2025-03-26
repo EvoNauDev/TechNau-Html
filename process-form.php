@@ -181,10 +181,6 @@ if ($mail_sent) {
     header('HTTP/1.1 500 Internal Server Error');
     echo json_encode(['status' => 'error', 'message' => 'Erreur lors de l\'envoi du message']);
 }
-<?php
-// Configuration
-$recipient_email = "smeet.felix@gmail.com"; // Votre adresse Gmail
-$website_name = "TechNau";
 
 // Vérification de la méthode de requête
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
