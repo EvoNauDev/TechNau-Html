@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -6,6 +7,16 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+>>>>>>> 9ee8d50224dd048f1c9a5caed9f80d9dced4b00e
 
 <url>
   <loc>https://technau.fr/</loc>
@@ -26,7 +37,13 @@
   <loc>https://technau.fr/contact</loc>
   <lastmod>2025-03-25T18:00:13+00:00</lastmod>
   <priority>0.80</priority>
+<<<<<<< HEAD
 </url>
 
 
+=======
+</url>
+
+
+>>>>>>> 9ee8d50224dd048f1c9a5caed9f80d9dced4b00e
 </urlset>
